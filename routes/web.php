@@ -42,3 +42,11 @@ Route::group(['prefix' => 'pengguna', 'middleware' => ['auth','role:pengguna']],
         return 'halaman profile pengguna';
     });
 });
+
+Route::group(['prefix' => 'admin', 'middleware' =>['auth']], function(){
+    Route::get('pasien.index');
+}); 
+
+Route::get('petugas', function(){
+    return view('petugas.index');
+});

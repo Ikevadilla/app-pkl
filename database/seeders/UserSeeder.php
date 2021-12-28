@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
     ]);
 
         $pengguna = Role::create([
-            'name' => 'pengguna',
+            'name' => 'pasien',
             'display_name' => 'User Biasa'
         ]);
 
@@ -64,8 +64,8 @@ class UserSeeder extends Seeder
         $user->save();
 
         $pengunjung = new User();
-        $pengunjung->name = 'pengunjung';
-        $pengunjung->email = 'pengunjung@gmail.com';
+        $pengunjung->name = 'pasien';
+        $pengunjung->email = 'pasien@gmail.com';
         $pengunjung->password = Hash::make(12345678);
         $pengunjung->save();
 
