@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\poliklinik;
+use App\Models\daftar;
 use Illuminate\Http\Request;
 
-class PoliklinikController extends Controller
+class DaftarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PoliklinikController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\poliklinik  $poliklinik
+     * @param  \App\Models\daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function show(poliklinik $poliklinik)
+    public function show(daftar $daftar)
     {
         //
     }
@@ -52,10 +52,10 @@ class PoliklinikController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\poliklinik  $poliklinik
+     * @param  \App\Models\daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function edit(poliklinik $poliklinik)
+    public function edit(daftar $daftar)
     {
         //
     }
@@ -64,10 +64,10 @@ class PoliklinikController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\poliklinik  $poliklinik
+     * @param  \App\Models\daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, poliklinik $poliklinik)
+    public function update(Request $request, daftar $daftar)
     {
         //
     }
@@ -75,10 +75,10 @@ class PoliklinikController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\poliklinik  $poliklinik
+     * @param  \App\Models\daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(poliklinik $poliklinik)
+    public function destroy(daftar $daftar)
     {
         //
     }

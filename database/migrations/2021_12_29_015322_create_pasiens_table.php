@@ -15,7 +15,15 @@ class CreatePasiensTable extends Migration
     {
         Schema::create('pasiens', function (Blueprint $table) {
             $table->id();
+             $table->unsignedBigInteger('id_dokter');
+              $table->string('nama_pasien');
+               $table->string('gender');
+                $table->date('tgl_lahir');
+                $table->string('alamat');
+               $table->integer('no_hp');
             $table->timestamps();
+
+            $table->foreign('id_dokter')->references('id')->on('dokters');
         });
     }
 

@@ -250,21 +250,21 @@ return [
         ['header' => 'MANAGE'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'data pasien',
-            'url'  => 'admin/settings',
+            'text' => 'pasien',
+            'url'  => 'admin/pasien',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'jadwal dokter',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/dokter',
             'icon' => 'fas fa-fw fa-user',
         ],[
             'text' => 'data',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/data',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

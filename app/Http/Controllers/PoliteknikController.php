@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pendaftaranpasienn;
+use App\Models\politeknik;
 use Illuminate\Http\Request;
 
-class PendaftaranpasiennController extends Controller
+class PoliteknikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PendaftaranpasiennController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\pendaftaranpasienn  $pendaftaranpasienn
+     * @param  \App\Models\politeknik  $politeknik
      * @return \Illuminate\Http\Response
      */
-    public function show(pendaftaranpasienn $pendaftaranpasienn)
+    public function show(politeknik $politeknik)
     {
         //
     }
@@ -52,10 +52,10 @@ class PendaftaranpasiennController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\pendaftaranpasienn  $pendaftaranpasienn
+     * @param  \App\Models\politeknik  $politeknik
      * @return \Illuminate\Http\Response
      */
-    public function edit(pendaftaranpasienn $pendaftaranpasienn)
+    public function edit(politeknik $politeknik)
     {
         //
     }
@@ -64,10 +64,10 @@ class PendaftaranpasiennController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pendaftaranpasienn  $pendaftaranpasienn
+     * @param  \App\Models\politeknik  $politeknik
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pendaftaranpasienn $pendaftaranpasienn)
+    public function update(Request $request, politeknik $politeknik)
     {
         //
     }
@@ -75,10 +75,10 @@ class PendaftaranpasiennController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\pendaftaranpasienn  $pendaftaranpasienn
+     * @param  \App\Models\politeknik  $politeknik
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pendaftaranpasienn $pendaftaranpasienn)
+    public function destroy(politeknik $politeknik)
     {
         //
     }

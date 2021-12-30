@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DokterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], funct
     Route::get('profile', function(){
         return 'halaman profile admin';
     });
+
+     Route::resource('pasien', PasienController::class);
+     Route::resource('dokter', DokterController::class);
 });
 
     //Hanya untuk role pengguna
@@ -45,8 +50,13 @@ Route::group(['prefix' => 'pengguna', 'middleware' => ['auth','role:pengguna']],
 
 Route::group(['prefix' => 'admin', 'middleware' =>['auth']], function(){
     Route::get('pasien.index');
+
+    
 }); 
 
-Route::get('petugas', function(){
-    return view('petugas.index');
-});
+
+// Route::get('pasien', function () {
+//         return view('pasien.index');
+//     })->middleware(['role:admin|pengguna']);
+
+   

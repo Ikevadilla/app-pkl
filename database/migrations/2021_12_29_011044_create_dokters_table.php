@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePolikliniksTable extends Migration
+class CreateDoktersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreatePolikliniksTable extends Migration
      */
     public function up()
     {
-        Schema::create('polikliniks', function (Blueprint $table) {
+        Schema::create('dokters', function (Blueprint $table) {
             $table->id();
+            $table->string('spesialis');
+            $table->integer('no_hp');
+            $table->string('gender');
             $table->timestamps();
+
         });
     }
 
@@ -26,6 +30,6 @@ class CreatePolikliniksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('polikliniks');
+        Schema::dropIfExists('dokters');
     }
 }

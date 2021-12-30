@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Pasien</h1>
+                    <h1 class="m-0">Dokter</h1>
                 </div>
             </div>
         </div>
@@ -20,39 +20,34 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <a href="{{ route('pasien.create') }}" class="btn btn-sm btn-primary float-right">Tambah
-                            Pasien</a>
+                        <a href="{{ route('dokter.create') }}" class="btn btn-sm btn-primary float-right">Tambah
+                            Dokter</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <tr>
                                     <th>Nomor</th>
-                                    <th>Dokter</th>
-                                    <th>nama</th>
+                                    <th>Nama Dokter</th>
+                                    <th>Spesialis</th>
+                                    <th>no_hp</th>
                                     <th>gender</th>
-                                    <th>Tempat,tanggal lahir</th>
-                                    <th>alamat</th>
-                                    <th>No_Hp</th>
-                                    <th>Aksi</th>
                                 </tr>
                                 @php $no=1; @endphp
-                                @foreach ($pasien as $data)
+                                @foreach ($dokter as $data)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $data->id_dokter }}</td>
-                                        <td>{{ $data->nama_pasien }}</td>
-                                        <td>{{ $data->gender }}</td>
-                                        <td>{{ $data->tgl_lahir }}</td>
-                                        <td>{{ $data->alamat }}</td>
+                                        <td>{{ $data->nama_dokter }}</td>
+                                        <td>{{ $data->spesialis }}</td>
                                         <td>{{ $data->no_hp }}</td>
+                                        <td>{{ $data->gender }}</td>
                                         <td>
-                                            <form action="{{ route('pasien.destroy', $data->id) }}" method="post">
+                                            <form action="{{ route('dokter.destroy', $data->id) }}" method="post">
                                                 @method('delete')
                                                 @csrf
-                                                <a href="{{ route('pasien.edit', $data->id) }}"
+                                                <a href="{{ route('dokter.edit', $data->id) }}"
                                                     class="btn btn-info">Edit</a>
-                                                <a href="{{ route('pasien.show', $data->id) }}"
+                                                <a href="{{ route('dokter.show', $data->id) }}"
                                                     class="btn btn-warning">Show</a>
                                                 <button type="submit" class="btn btn-danger"
                                                     onclick="return confirm('Apakah anda yakin menghapus ini?');">Delete</button>

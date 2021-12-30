@@ -14,7 +14,8 @@ class DokterController extends Controller
      */
     public function index()
     {
-        //
+          $dokter= dokter::all();
+        return view('dokter.index', compact('dokter'));
     }
 
     /**
@@ -24,7 +25,7 @@ class DokterController extends Controller
      */
     public function create()
     {
-        //
+         return view('dokter.create');
     }
 
     /**
@@ -35,7 +36,21 @@ class DokterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         {
+         $validated = $request->validate([
+            'nama_dokter' => 'required',
+            'spesialis' => 'required',
+            'no_hp' => 'required',
+            'gender' => 'required',
+             ]);
+        $dokter = new dokter;
+        $dokter->nama_dokter = $request->nama_dokter;
+        $dokter->spesialis = $request->spesialis;
+        $dokter->no_hp = $request->no_hp;
+        $dokter->gender = $request->gender;
+        $dokter->save();
+         return redirect()->route('dokter.index');
+         }
     }
 
     /**
@@ -46,7 +61,8 @@ class DokterController extends Controller
      */
     public function show(dokter $dokter)
     {
-        //
+        $dokter = dokter::findOrFail($id);
+        return view('dokter.show', compact('dokter'));
     }
 
     /**
@@ -57,7 +73,8 @@ class DokterController extends Controller
      */
     public function edit(dokter $dokter)
     {
-        //
+         $dokter = dokter::findOrFail($id);
+        return view('dokter.edit', compact('dokter'));
     }
 
     /**
@@ -69,7 +86,20 @@ class DokterController extends Controller
      */
     public function update(Request $request, dokter $dokter)
     {
-        //
+        $validated = $request->validate([
+            'nama_dokter' => 'required',
+            'spesialis' => 'required',
+            'no_hp' => 'required',
+            'gender' => 'required',
+        ]);
+
+        $dokter = dokter::findOrFail($id);
+        $dokter->nama_dokter = $request->nama_dokter;
+        $dokter->spesialis = $request->spesialis;
+        $dokter->no_hp = $request->no_hp;
+        $dokter->geder = $request->no_hp;
+        $dokter->save();
+        return redirect()->route('dokter.index');
     }
 
     /**
@@ -80,6 +110,8 @@ class DokterController extends Controller
      */
     public function destroy(dokter $dokter)
     {
-        //
+        $dokter = dokter::findOrFail($id);
+        $dokter->delete();
+        return redirect()->route('dokter.index');
     }
 }

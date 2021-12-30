@@ -15,6 +15,8 @@ class PasienController extends Controller
     public function index()
     {
         //
+        $pasien= pasien::all();
+        return view('pasien.index', compact('pasien'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PasienController extends Controller
      */
     public function create()
     {
-        //
+        return view('pasien.create');
     }
 
     /**
@@ -35,8 +37,25 @@ class PasienController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+         $validated = $request->validate([
+             'id_dokter' => 'required',
+            'nama_pasien' => 'required',
+            'gender' => 'required',
+            'tgl_lahir' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+             ]);
+        $pasien = new pasien;
+        $pasien->id_dokter = $request->id_dokter;
+        $pasien->nama_pasien = $request->nama_pasien;
+        $pasien->gender = $request->gender;
+        $pasien->tgl_lahir = $request->tgl_lahir;
+        $pasien->alamat = $request->alamat;
+        $pasien->no_hp = $request->no_hp;
+        $pasien->save();
+         return redirect()->route('pasien.index');
+         }
+
 
     /**
      * Display the specified resource.
@@ -44,9 +63,10 @@ class PasienController extends Controller
      * @param  \App\Models\pasien  $pasien
      * @return \Illuminate\Http\Response
      */
-    public function show(pasien $pasien)
+    public function show($id)
     {
-        //
+         $pasien = pasien::findOrFail($id);
+        return view('pasien.show', compact('pasien'));
     }
 
     /**
@@ -55,9 +75,10 @@ class PasienController extends Controller
      * @param  \App\Models\pasien  $pasien
      * @return \Illuminate\Http\Response
      */
-    public function edit(pasien $pasien)
+    public function edit($id)
     {
-        //
+         $pasien = pasien::findOrFail($id);
+        return view('pasien.edit', compact('pasien'));
     }
 
     /**
@@ -67,10 +88,28 @@ class PasienController extends Controller
      * @param  \App\Models\pasien  $pasien
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pasien $pasien)
+    public function update(Request $request, $id)
     {
-        //
+          $validated = $request->validate([
+            'id_dokter' => 'required',
+            'nama_pasien' => 'required',
+            'gender' => 'required',
+            'tgl_lahir' => 'required',
+            'alamat' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        $pasien = pasien::findOrFail($id);
+        $pasien->id_dokter = $request->id_dokter;
+        $pasien->nama_pasien = $request->nama_pasien;
+        $pasien->gender = $request->gender;
+        $pasien->tgl_lahir = $request->tgl_lahir;
+        $pasien->alamat = $request->alamat;
+        $pasien->no_hp = $request->no_hp;
+        $pasien->save();
+        return redirect()->route('pasien.index');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +117,10 @@ class PasienController extends Controller
      * @param  \App\Models\pasien  $pasien
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pasien $pasien)
+    public function destroy($id)
     {
-        //
+         $pasien = pasien::findOrFail($id);
+        $pasien->delete();
+        return redirect()->route('pasien.index');
     }
 }
