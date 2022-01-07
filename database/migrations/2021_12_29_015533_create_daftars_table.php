@@ -17,9 +17,9 @@ class CreateDaftarsTable extends Migration
            $table->id();
            $table->string('pasien');
            $table->bigInteger('id_dokter')->unsigned();
-           $table->foreign('id_dokter')->reference('id')->on('pasien')->onUpdate('cascade')->onDelete('cascade');
-           $table->integer('daftars')->unsigned();
+           $table->string('daftars')->unsigned();
            $table->timestamps();
+           $table->foreign('id_dokter')->references('id')->on('dokters');
             });
     }
 

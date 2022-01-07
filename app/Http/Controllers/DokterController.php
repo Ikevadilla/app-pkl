@@ -59,7 +59,7 @@ class DokterController extends Controller
      * @param  \App\Models\dokter  $dokter
      * @return \Illuminate\Http\Response
      */
-    public function show(dokter $dokter)
+    public function show($id)
     {
         $dokter = dokter::findOrFail($id);
         return view('dokter.show', compact('dokter'));
@@ -71,7 +71,7 @@ class DokterController extends Controller
      * @param  \App\Models\dokter  $dokter
      * @return \Illuminate\Http\Response
      */
-    public function edit(dokter $dokter)
+    public function edit($id)
     {
          $dokter = dokter::findOrFail($id);
         return view('dokter.edit', compact('dokter'));
@@ -84,7 +84,7 @@ class DokterController extends Controller
      * @param  \App\Models\dokter  $dokter
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, dokter $dokter)
+    public function update(Request $request, $id)
     {
         $validated = $request->validate([
             'nama_dokter' => 'required',
@@ -108,7 +108,7 @@ class DokterController extends Controller
      * @param  \App\Models\dokter  $dokter
      * @return \Illuminate\Http\Response
      */
-    public function destroy(dokter $dokter)
+    public function destroy($id)
     {
         $dokter = dokter::findOrFail($id);
         $dokter->delete();

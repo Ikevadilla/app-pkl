@@ -259,12 +259,16 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'jadwal dokter',
+            'text' => 'dokter',
             'url'  => 'admin/dokter',
             'icon' => 'fas fa-fw fa-user',
         ],[
-            'text' => 'data',
-            'url'  => 'admin/data',
+            'text' => 'polikteknik',
+            'url'  => 'admin/poli',
+            'icon' => 'fas fa-fw fa-user',
+        ],[
+            'text' => 'obat',
+            'url'  => 'admin/obat',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

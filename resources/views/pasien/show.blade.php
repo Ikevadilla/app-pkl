@@ -12,9 +12,9 @@
                             @method('put')
                             <div class="form-group">
                                 <label for=""> Nama Pasien</label>
-                                <input type="text" name="nama" value="{{ $pasien->nama }}"
-                                    class="form-control @error('nama') is-invalid @enderror" disabled>
-                                @error('nama')
+                                <input type="text" name="nama_pasien" value="{{ $pasien->nama_pasien }}"
+                                    class="form-control @error('nama_pasien') is-invalid @enderror" disabled>
+                                @error('nama_pasien')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label for=""> Tempat, tanggal lahir</label>
-                                <input type="text" name="tgl_lahir" value="{{ $dataanak->tgl_lahir }}"
+                                <input type="text" name="tgl_lahir" value="{{ $pasien->tgl_lahir }}"
                                     class="form-control @error('tgl_lahir') is-invalid @enderror" disabled>
                                 @error('tgl_lahir')
                                     <span class="invalid-feedback" role="alert">

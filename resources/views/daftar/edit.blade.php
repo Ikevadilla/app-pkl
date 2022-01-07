@@ -5,55 +5,65 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Nama Pasien</div>
+                    <div class="card-header">tgl_daftar</div>
                     <div class="card-body">
-                        <form action="{{ route('pasien.store') }}" method="post">
+                        <form action="{{ route('daftar.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label for="">Masukan Nama Pasien</label>
-                                <input type="text" name="nama_pasien"
-                                    class="form-control @error('nama_pasien') is-invalid @enderror">
-                                @error('nama_pasien')
+                                <label for="">Masukan tanggal daftar</label>
+                                <input type="text" name="tgl_daftar"
+                                    class="form-control @error('tgl_daftar') is-invalid @enderror">
+                                @error('tgl_daftar')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                              <div class="form-group">
-                                <label for="">Masukan Gender</label>
-                                <input type="text" name="gender"
-                                    class="form-control @error('gender') is-invalid @enderror">
-                                @error('gender')
+                                <label for="">Masukan kode pasien</label>
+                                <input type="text" name="kd_pasien"
+                                    class="form-control @error('kd_pasien') is-invalid @enderror">
+                                @error('kd_pasien')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                              <div class="form-group">
-                                <label for="">Masukan Tempat,tanggal lahir</label>
-                                <input type="date" name="tgl_lahir"
-                                    class="form-control @error('tgl_lahir') is-invalid @enderror">
-                                @error('tgl_lahir')
+                                <label for="">Masukan kode poli</label>
+                                <input type="text" name="kd_poli"
+                                    class="form-control @error('kd_poli') is-invalid @enderror">
+                                @error('kd_poli')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                              <div class="form-group">
-                                <label for="">Masukan Alamat</label>
-                                <input type="text" name="alamat"
-                                    class="form-control @error('alamat') is-invalid @enderror">
-                                @error('alamat')
+                                <label for="">Masukan kode dokter</label>
+                                <input type="text" name="kd_dokter"
+                                    class="form-control @error('kd_dokter') is-invalid @enderror">
+                                @error('kd_dokter')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                             <div class="form-group">
-                                <label for="">Masukan No Hp</label>
-                                <input type="text" name="no_hp"
-                                    class="form-control @error('no_hp') is-invalid @enderror">
-                                @error('no_hp')
+                            <div class="form-group">
+                                <label for="">Masukan keluhan</label>
+                                <input type="text" name="keluhan"
+                                    class="form-control @error('keluhan') is-invalid @enderror">
+                                @error('keluhan')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="">Masukan kode obat</label>
+                                <input type="text" name="kd_obat"
+                                    class="form-control @error('kd_obat') is-invalid @enderror">
+                                @error('kd_obat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -12,9 +12,9 @@
                             @method('put')
                             <div class="form-group">
                                 <label for="">Masukan Nama Pasien</label>
-                                <input type="text" name="nama" value="{{ $pasien->nama }}"
-                                    class="form-control @error('nama') is-invalid @enderror">
-                                @error('nama')
+                                <input type="text" name="nama_pasien" value="{{ $pasien->nama_pasien }}"
+                                    class="form-control @error('nama_pasien') is-invalid @enderror">
+                                @error('nama_pasien')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Masukan Tempat, tanggal lahir</label>
-                                <input type="text" name="ttl" value="{{ $pasien->tgl_lahir }}"
+                                <input type="date" name="tgl_lahir" value="{{ $pasien->tgl_lahir }}"
                                     class="form-control @error('tgl_lahir') is-invalid @enderror">
                                 @error('tgl_lahir')
                                     <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
                             <div class="form-group">
                                 <label for="">Masukan No Hp</label>
                                 <input type="text" name="no_hp" value="{{ $pasien->no_hp }}"
-                                    class="form-control @error('wali') is-invalid @enderror">
+                                    class="form-control @error('no_hp') is-invalid @enderror">
                                 @error('no_hp')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
