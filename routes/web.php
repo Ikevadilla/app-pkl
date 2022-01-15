@@ -24,7 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Hanya untuk role admin
-Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], function(){
+Route::group(['prefix' => 'admin', 'middleware'], function(){
     Route::get('/', function(){
         return 'halaman admin';
     });

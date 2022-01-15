@@ -263,8 +263,8 @@ return [
             'url'  => 'admin/dokter',
             'icon' => 'fas fa-fw fa-user',
         ],[
-            'text' => 'polikteknik',
-            'url'  => 'admin/poli',
+            'text' => 'keluhan',
+            'url'  => 'admin/keluhan',
             'icon' => 'fas fa-fw fa-user',
         ],[
             'text' => 'obat',

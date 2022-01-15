@@ -17,7 +17,7 @@ class CreateDaftarsTable extends Migration
            $table->id();
            $table->string('pasien');
            $table->bigInteger('id_dokter')->unsigned();
-           $table->string('daftars')->unsigned();
+           $table->string('daftars');
            $table->timestamps();
            $table->foreign('id_dokter')->references('id')->on('dokters');
             });

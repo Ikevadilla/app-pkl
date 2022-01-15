@@ -7,8 +7,9 @@
                 <div class="card">
                     <div class="card-header">Nama dokter</div>
                     <div class="card-body">
-                        <form action="{{ route('dokter.store') }}" method="post">
+                        <form action="{{ route('dokter.update', $dokter->id) }}" method="post">
                             @csrf
+                            @method('put')
                             <div class="form-group">
                                 <label for="">Masukan Nama dokter</label>
                                 <input type="text" name="nama_dokter"
@@ -31,7 +32,7 @@
                             </div>
                              <div class="form-group">
                                 <label for="">Masukan No Hp</label>
-                                <input type="text" name="no_hp"
+                                <input type="number" name="no_hp"
                                     class="form-control @error('no_hp') is-invalid @enderror">
                                 @error('no_hp')
                                     <span class="invalid-feedback" role="alert">

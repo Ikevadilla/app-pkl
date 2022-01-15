@@ -17,17 +17,17 @@ class UserSeeder extends Seeder
 
     public function run()
     {
-        // $user = new User();
-        // $user->name = 'pendaftaran-pasienn';
-        // $user->email = 'admin@gmail.com';
-        // $user->password = Hash::make('12345678');
-        // $user->save();
+        $user = new User();
+        $user->name = 'pendaftaran-pasienn';
+        $user->email = 'admin@gmail.com';
+        $user->password = Hash::make('12345678');
+        $user->save();
 
-        // $user = new User();
-        // $user->name = 'ike';
-        // $user->email = 'ike@gmail.com';
-        // $user->password = Hash::make('12345678');
-        // $user->save();
+        $user = new User();
+        $user->name = 'ike';
+        $user->email = 'ike@gmail.com';
+        $user->password = Hash::make('12345678');
+        $user->save();
 
         // $user = new User();
         // $user->name = 'vadila';
@@ -47,29 +47,29 @@ class UserSeeder extends Seeder
         // $user->password = Hash::make('12345678');
         // $user->save();
 
-        $admin = Role::create([
-        'name' => 'admin',
-        'display_name' => 'User Administrator'
-    ]);
+//         $admin = Role::create([
+//         'name' => 'admin',
+//         'display_name' => 'User Administrator'
+//     ]);
 
-        $pengguna = Role::create([
-            'name' => 'pasien',
-            'display_name' => 'User Biasa'
-        ]);
+//         $pengguna = Role::create([
+//             'name' => 'pasien',
+//             'display_name' => 'User Biasa'
+//         ]);
 
-        $user = new User();
-        $user->name = 'ike vadila';
-        $user->email = 'admin@gmail.com';
-        $user->password = Hash::make(12345678);
-        $user->save();
+//         $user = new User();
+//         $user->name = 'ike vadila';
+//         $user->email = 'admin@gmail.com';
+//         $user->password = Hash::make(12345678);
+//         $user->save();
 
-        $pengunjung = new User();
-        $pengunjung->name = 'pasien';
-        $pengunjung->email = 'pasien@gmail.com';
-        $pengunjung->password = Hash::make(12345678);
-        $pengunjung->save();
+//         $pengunjung = new User();
+//         $pengunjung->name = 'pasien';
+//         $pengunjung->email = 'pasien@gmail.com';
+//         $pengunjung->password = Hash::make(12345678);
+//         $pengunjung->save();
 
-        $user->attachRole($admin);
-        $pengunjung->attachRole($pengguna);
+//         $user->attachRole($admin);
+//         $pengunjung->attachRole($pengguna);
     }
 }

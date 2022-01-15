@@ -14,7 +14,8 @@ class ObatController extends Controller
      */
     public function index()
     {
-        //
+        $obat= obat::all();
+        return view('obat.index', compact('obat'));
     }
 
     /**
@@ -24,7 +25,8 @@ class ObatController extends Controller
      */
     public function create()
     {
-        //
+        $dokter= dokter::all();
+        return view('dokter.index', compact('dokter'));
     }
 
     /**

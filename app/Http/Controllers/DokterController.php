@@ -97,7 +97,7 @@ class DokterController extends Controller
         $dokter->nama_dokter = $request->nama_dokter;
         $dokter->spesialis = $request->spesialis;
         $dokter->no_hp = $request->no_hp;
-        $dokter->geder = $request->no_hp;
+        $dokter->gender = $request->gender;
         $dokter->save();
         return redirect()->route('dokter.index');
     }

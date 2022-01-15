@@ -17,7 +17,7 @@ class CreateDoktersTable extends Migration
             $table->id();
             $table->string('nama_dokter');
             $table->string('spesialis');
-            $table->integer('no_hp');
+            $table->string('no_hp');
             $table->string('gender');
             $table->timestamps();
 
