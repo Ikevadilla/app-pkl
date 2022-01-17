@@ -1,5 +1,5 @@
  <div class="navbar-header">
-     <a class="navbar-brand" href="{{ route('home') }}">Toko Buku</a>
+     <a class="navbar-brand" href="{{ route('home') }}">Pendaftaran Pasien</a>
  </div>
 
  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

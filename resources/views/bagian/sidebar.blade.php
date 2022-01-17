@@ -22,7 +22,10 @@
                 <a href="{{ route('dokter.index') }}">dokter </a>
 
             </li>
-            
+             <li>
+                <a href="{{ route('keluhan.index') }}">keluhan </a>
+
+            </li>
             </li>
         </ul>
 

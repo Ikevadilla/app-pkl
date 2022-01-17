@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\KeluhanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::group(['prefix' => 'admin', 'middleware'], function(){
 
      Route::resource('pasien', PasienController::class);
      Route::resource('dokter', DokterController::class);
+     Route::resource('keluhan',KeluhanController::class);
 });
 
     //Hanya untuk role pengguna
