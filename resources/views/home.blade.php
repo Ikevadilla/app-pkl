@@ -1,12 +1,4 @@
-@extends('adminlte::page')
-
-@section('title','Dashboard')
-
-@section('content_header')
-
-Dashboard
-
-@stop 
+@extends('layouts.admin')
 
 @section('content')
 <div class="card-group">
@@ -41,13 +33,3 @@ Dashboard
     </div>
   </div>
 </div>
-
-@stop 
-
-@section('css')
-    
-@stop 
-
-@section('js')
-
-@stop
