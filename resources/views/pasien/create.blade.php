@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
@@ -14,7 +14,7 @@
                                 <input type="text" name="nama_pasien"
                                     class="form-control @error('nama_pasien') is-invalid @enderror">
                                 @error('nama_pasien')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="nama tidak boleh kosong" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror

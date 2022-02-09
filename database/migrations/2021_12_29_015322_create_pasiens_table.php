@@ -19,7 +19,7 @@ class CreatePasiensTable extends Migration
                 $table->string('gender');
                 $table->date('tgl_lahir');
                 $table->string('alamat');
-                $table->integer('no_hp');
+                $table->BigInteger('no_hp');
                 $table->timestamps();
 
         });

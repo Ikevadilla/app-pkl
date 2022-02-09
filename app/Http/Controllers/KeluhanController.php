@@ -14,7 +14,7 @@ class KeluhanController extends Controller
      */
     public function index()
     {
-          $keluhan= keluhan::all();
+        $keluhan = keluhan::all();
         return view('keluhan.index', compact('keluhan'));
     }
 
@@ -25,7 +25,7 @@ class KeluhanController extends Controller
      */
     public function create()
     {
-         return view('keluhan.create');
+        return view('keluhan.create');
     }
 
     /**
@@ -36,21 +36,21 @@ class KeluhanController extends Controller
      */
     public function store(Request $request)
     {
-          {
-         $validated = $request->validate([
-            'nama_keluhan' => 'required',
-            'spesialis' => 'required',
-            'no_hp' => 'required',
-            'gender' => 'required',
-             ]);
-        $keluhan = new keluhan;
-        $keluhan->nama_keluhan = $request->nama_keluhan;
-        $keluhan->spesialis = $request->spesialis;
-        $keluhan->no_hp = $request->no_hp;
-        $keluhan->gender = $request->gender;
-        $keluhan->save();
-         return redirect()->route('keluhan.index');
-         }
+        {
+            $validated = $request->validate([
+                'nama_keluhan' => 'required',
+                // 'spesialis' => 'required',
+                // 'no_hp' => 'required',
+                // 'gender' => 'required',
+            ]);
+            $keluhan = new keluhan;
+            $keluhan->nama_keluhan = $request->nama_keluhan;
+            // $keluhan->spesialis = $request->spesialis;
+            // $keluhan->no_hp = $request->no_hp;
+            // $keluhan->gender = $request->gender;
+            $keluhan->save();
+            return redirect()->route('keluhan.index');
+        }
     }
 
     /**
@@ -61,7 +61,7 @@ class KeluhanController extends Controller
      */
     public function show(keluhan $keluhan)
     {
-        $keluhan = keluhan::findOrFail($id);
+        // $keluhan = keluhan::findOrFail($id);
         return view('keluhan.show', compact('keluhan'));
     }
 
@@ -71,9 +71,9 @@ class KeluhanController extends Controller
      * @param  \App\Models\keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function edit(keluhan $keluhan)
+    public function edit($id)
     {
-         $keluhan = keluhan::findOrFail($id);
+        $keluhan = keluhan::findOrFail($id);
         return view('keluhan.edit', compact('keluhan'));
     }
 
@@ -84,20 +84,20 @@ class KeluhanController extends Controller
      * @param  \App\Models\keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, keluhan $keluhan)
+    public function update(Request $request, $id)
     {
-         $validated = $request->validate([
-            'nama_keluhan' => 'required',
-            'spesialis' => 'required',
-            'no_hp' => 'required',
-            'gender' => 'required',
-        ]);
+        // $validated = $request->validate([
+        //     'nama_keluhan' => 'required',
+        //     // 'spesialis' => 'required',
+        //     // 'no_hp' => 'required',
+        //     // 'gender' => 'required',
+        // ]);
 
         $keluhan = keluhan::findOrFail($id);
         $keluhan->nama_keluhan = $request->nama_keluhan;
-        $keluhan->spesialis = $request->spesialis;
-        $keluhan->no_hp = $request->no_hp;
-        $keluhan->gender = $request->gender;
+        // $keluhan->spesialis = $request->spesialis;
+        // $keluhan->no_hp = $request->no_hp;
+        // $keluhan->gender = $request->gender;
         $keluhan->save();
         return redirect()->route('keluhan.index');
     }
@@ -108,9 +108,9 @@ class KeluhanController extends Controller
      * @param  \App\Models\keluhan  $keluhan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(keluhan $keluhan)
+    public function destroy($id)
     {
-         $keluhan = keluhan::findOrFail($id);
+        $keluhan = keluhan::findOrFail($id);
         $keluhan->delete();
         return redirect()->route('keluhan.index');
     }
